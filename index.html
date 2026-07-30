@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Friendship Day, Era | For My Kona Buri 💖</title>
+  <meta name="description"
+    content="A special Friendship Day website dedicated to my best friend & love, Rukuu. Filled with memories, encouragement, love, and motivation.">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background Canvas for Floating Particles -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-gradient"></div>
+
+  <!-- Glowing Orbs -->
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+  <div class="glow-orb glow-orb-3"></div>
+
+  <!-- ==========================================================================
+       1. ENTRANCE GATEWAY OVERLAY
+       ========================================================================== -->
+  <div id="entrance-screen">
+    <div class="entrance-card">
+      <div class="entrance-badge">
+        <i class="fa-solid fa-sparkles"></i> Friendship Day Special
+      </div>
+      <h1 class="entrance-title">A Portal Built Only For You</h1>
+      <p class="entrance-subtitle">To my most adorable Kona Buri. Click the button below to unlock your surprise.</p>
+
+      <!-- Centerpiece Button -->
+      <button id="enter-btn" class="kona-buri-btn" aria-label="Unlock Website for Kona Buri">
+        <i class="fa-solid fa-heart btn-heart-icon"></i>
+        for my kona buri
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </button>
+
+      <p class="entrance-footer-note">✨ Made with endless love &amp; care by Nahid for his most adorable Kona Buri</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN WEBSITE CONTENT
+       ========================================================================== -->
+  <div id="app-content" class="hidden-app">
+
+    <!-- Top Sticky Bar -->
+    <header class="top-navbar">
+      <div class="nav-brand">
+        <i class="fa-solid fa-heart-pulse" style="color: var(--crimson-glow);"></i>
+        <span>Only</span> &amp; <span>Only For my Kona Buri</span>
+      </div>
+      <div class="nav-controls">
+        <button id="audio-toggle-btn" class="audio-btn" aria-label="Toggle Ambient Audio">
+          <i class="fa-solid fa-music"></i>
+          <span id="audio-btn-text">Play Melody</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge-pill">
+            <i class="fa-solid fa-crown" style="color: var(--light-blue-glow);"></i>
+            <span>HAPPY FRIENDSHIP DAY 💖</span>
+          </div>
+
+          <h1 class="hero-title">
+            To My Best Friend &amp; My Love,
+            <span class="highlight-name">Kona Buri</span>
+            <span class="nickname-sub">~ my soulmate ~</span>
+          </h1>
+
+          <p class="hero-quote">
+            In a world full of noise, your presence is my favorite sanctuary. You are my truest friend, my sweetest
+            love, and my constant inspiration. Today and every day, I want to see you happy, shining, and achieving
+            every single dream in your heart.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#memories-section" class="btn-primary">
+              <i class="fa-solid fa-images"></i> Explore Memories
+            </a>
+            <a href="#comfort-section" class="btn-secondary">
+              <i class="fa-solid fa-envelope-open-text"></i> Open When Cards
+            </a>
+          </div>
+
+          <!-- Counter Pill -->
+          <div class="bond-counter-card">
+            <div class="counter-item">
+              <span class="counter-num">100%</span>
+              <span class="counter-label">Pure Happiness</span>
+            </div>
+            <div class="counter-divider"></div>
+            <div class="counter-item">
+              <span class="counter-num">∞</span>
+              <span class="counter-label">Infinite Love</span>
+            </div>
+            <div class="counter-divider"></div>
+            <div class="counter-item">
+              <span class="counter-num">Always</span>
+              <span class="counter-label">By Your Side</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PHOTO ALBUM / GALLERY -->
+    <section id="memories-section" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">PREVIOUS MOMENTS &amp; SMILES</span>
+          <h2 class="section-title">Our Memory <span>Gallery</span></h2>
+          <p class="section-desc">Click any polaroid to unfold the story & memory behind it, my Kona Buri.</p>
+        </div>
+
+        <div class="polaroid-grid">
+          <!-- Photo 1 -->
+          <div class="polaroid-card"
+            onclick="openLightbox('images/starry_walk.png', 'Under the Starry Night', 'Remember when we talked under the open sky? The stars were bright, but your smile was brighter than all of them combined. Moments like these remind me how lucky I am to have you as my best friend and my love.')">
+            <div class="polaroid-img-wrapper">
+              <img src="images/starry_walk.png" alt="Starry Walk with Kona Buri">
+              <span class="polaroid-badge"><i class="fa-solid fa-moon"></i> Memory #1</span>
+            </div>
+            <div class="polaroid-caption">Under The Stars</div>
+            <div class="polaroid-sub">Click to read memory 💖</div>
+          </div>
+
+          <!-- Photo 2 -->
+          <div class="polaroid-card"
+            onclick="openLightbox('images/cozy_cafe.png', 'Warm Laughter & Chaaa', 'Every small Chaaa talk with you feels like a warm hug for my soul. Your laughter can instantly turn any bad day into a beautiful sunshine filled memory.')">
+            <div class="polaroid-img-wrapper">
+              <img src="images/cozy_cafe.png" alt="Cozy Cafe Date">
+              <span class="polaroid-badge"><i class="fa-solid fa-mug-hot"></i> Memory #2</span>
+            </div>
+            <div class="polaroid-caption">Warm Laughter</div>
+            <div class="polaroid-sub">Click to read memory ☕</div>
+          </div>
+
+          <!-- Photo 3 -->
+          <div class="polaroid-card"
+            onclick="openLightbox('images/sunset_view.png', 'Endless Horizons & Dreams', 'Looking at the twilight ocean with you makes me realize how bright our future is. You have so much potential, Era, and I will always stand by you to see you reach the peak of success.')">
+            <div class="polaroid-img-wrapper">
+              <img src="images/sunset_view.png" alt="Twilight Sunset">
+              <span class="polaroid-badge"><i class="fa-solid fa-sun"></i> Memory #3</span>
+            </div>
+            <div class="polaroid-caption">Endless Horizons</div>
+            <div class="polaroid-sub">Click to read memory 🌅</div>
+          </div>
+
+          <!-- Photo 4 -->
+          <div class="polaroid-card"
+            onclick="openLightbox('images/glowing_heart.png', 'An Unbreakable Soul Connection', 'Our bond is built on trust, laughter, deep friendship, and a love that grows stronger every day. No matter what comes our way, we are an unbeatable team.')">
+            <div class="polaroid-img-wrapper">
+              <img src="images/glowing_heart.png" alt="Neon Heart Glow">
+              <span class="polaroid-badge"><i class="fa-solid fa-heart"></i> Memory #4</span>
+            </div>
+            <div class="polaroid-caption">Unbreakable Bond</div>
+            <div class="polaroid-sub">Click to read memory ✨</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: "OPEN WHEN..." COMFORT & MOTIVATION VAULT -->
+    <section id="comfort-section" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">FOR EVERY MOOD &amp; DAY</span>
+          <h2 class="section-title">Open When <span>You Need Me</span></h2>
+          <p class="section-desc">Whenever you feel low, stressed, or happy, click these special comfort notes crafted
+            just for you.</p>
+        </div>
+
+        <div class="mood-vault-grid">
+          <!-- Mood 1: Stressed -->
+          <div class="mood-card" onclick="openMoodModal('stressed')">
+            <div class="mood-icon-wrapper">
+              <i class="fa-solid fa-cloud-rain"></i>
+            </div>
+            <h3 class="mood-card-title">When You Feel Stressed</h3>
+            <p class="mood-card-desc">Take a deep breath, Ruku Pakhi. Read this when the world gets overwhelming.</p>
+            <div class="mood-card-action">
+              <span>Open Note</span> <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+
+          <!-- Mood 2: Doubting yourself -->
+          <div class="mood-card" onclick="openMoodModal('doubt')">
+            <div class="mood-icon-wrapper">
+              <i class="fa-solid fa-brain-circuit"></i>
+            </div>
+            <h3 class="mood-card-title">When You Doubt Yourself</h3>
+            <p class="mood-card-desc">A gentle reminder of how amazingly smart, capable, and brilliant you are, Era.</p>
+            <div class="mood-card-action">
+              <span>Open Note</span> <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+
+          <!-- Mood 3: Winning / Success -->
+          <div class="mood-card" onclick="openMoodModal('success')">
+            <div class="mood-icon-wrapper">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h3 class="mood-card-title">When You Achieve Something</h3>
+            <p class="mood-card-desc">Let's celebrate your victory! I am always your biggest cheerleader.</p>
+            <div class="mood-card-action">
+              <span>Open Note</span> <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+
+          <!-- Mood 4: Lonely / Miss me -->
+          <div class="mood-card" onclick="openMoodModal('lonely')">
+            <div class="mood-icon-wrapper">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h3 class="mood-card-title">When You Miss Me</h3>
+            <p class="mood-card-desc">Remember that distance or time can never weaken our soul connection.</p>
+            <div class="mood-card-action">
+              <span>Open Note</span> <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+
+          <!-- Mood 5: Need a smile -->
+          <div class="mood-card" onclick="openMoodModal('smile')">
+            <div class="mood-icon-wrapper">
+              <i class="fa-solid fa-face-smile-beam"></i>
+            </div>
+            <h3 class="mood-card-title">When You Need A Smile</h3>
+            <p class="mood-card-desc">A cute message guaranteed to bring that gorgeous smile to your face.</p>
+            <div class="mood-card-action">
+              <span>Open Note</span> <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: MOTIVATION & FUTURE DREAMS WALL -->
+    <section class="section motivation-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">BELIEVE IN YOUR GREATNESS</span>
+          <h2 class="section-title">You Are Destined For <span>Success</span></h2>
+          <p class="section-desc">Era, your future is so bright and filled with endless achievements. Here is what I
+            believe for you.</p>
+        </div>
+
+        <div class="cards-grid-3">
+          <div class="future-card">
+            <span class="future-card-num">01</span>
+            <h3 class="future-card-title">Unstoppable Career &amp; Growth</h3>
+            <p class="future-card-body">Your dedication, intelligence, and hard work will open doors you never even
+              imagined. Never let temporary obstacles make you forget how talented you truly are.</p>
+          </div>
+
+          <div class="future-card">
+            <span class="future-card-num">02</span>
+            <h3 class="future-card-title">Inner Peace &amp; Happiness</h3>
+            <p class="future-card-body">My biggest wish is to see you peaceful and smiling every single day. Whatever
+              troubles come, remember they are just passing clouds over your bright sun.</p>
+          </div>
+
+          <div class="future-card">
+            <span class="future-card-num">03</span>
+            <h3 class="future-card-title">A Shared Future Full Of Magic</h3>
+            <p class="future-card-body">We will travel, achieve our goals, laugh until our stomachs hurt, and build a
+              lifetime of beautiful milestones together as best friends in love.</p>
+          </div>
+        </div>
+
+        <!-- FLIP CARDS: REASONS WHY ERA IS EXTRAORDINARY -->
+        <div class="reasons-container">
+          <div class="reasons-title-wrapper">
+            <h3 style="font-family: var(--font-heading); font-size: 2rem; color: #fff;">Reasons Why You're My Favorite
+              Person 💖</h3>
+            <p style="color: var(--text-muted);">Hover or tap each card to flip and reveal!</p>
+          </div>
+
+          <div class="flip-cards-grid">
+            <!-- Card 1 -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <i class="fa-solid fa-face-laugh-beam"></i>
+                  <h4>Your Smile</h4>
+                </div>
+                <div class="flip-card-back">
+                  <p>Your smile lights up the entire room and brings instant peace to my heart.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <h4>Your Intellect</h4>
+                </div>
+                <div class="flip-card-back">
+                  <p>You possess such sharp wisdom and perspective. You inspire me to be better every day.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <i class="fa-solid fa-shield-heart"></i>
+                  <h4>Your Kindness</h4>
+                </div>
+                <div class="flip-card-back">
+                  <p>Your gentle heart and kindness toward people make you exceptionally special.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <i class="fa-solid fa-fire-flame-curved"></i>
+                  <h4>Your Strength</h4>
+                </div>
+                <div class="flip-card-back">
+                  <p>You possess a resilient spirit. No matter how tough things get, you conquer with grace.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SEALED HEARTFELT LETTER -->
+    <section class="section">
+      <div class="container letter-section">
+        <div class="envelope-wrapper">
+          <div class="seal-badge">
+            <button class="wax-seal-btn" title="Wax Seal of Love" onclick="triggerFireworks()">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
+
+          <div class="letter-container">
+            <h3 class="letter-salutation">Amar <span>Ruku Pakhi,</span></h3>
+
+            <p class="letter-p">
+              Happy Friendship Day! Having you in my life is the greatest blessing I could ever ask for. We started as
+              best friends, and falling in love with you has been the most beautiful journey of my life.
+            </p>
+
+            <p class="letter-p">
+              I want you to know that your dreams are my dreams, your happiness is my priority, and your struggles are
+              mine to share. Whenever you feel tired or doubt yourself on tough days, look in the mirror and see what I
+              see: <span class="letter-highlight">an extraordinarily talented, gorgeous, strong, and brilliant woman who
+                can achieve anything she sets her mind to.</span>
+            </p>
+
+            <p class="letter-p">
+              I promise to always be your safe space, your listener, your comedy partner, your biggest supporter, and
+              your partner in love. I will always console you on bad days, celebrate every single win with you, and
+              never let you feel alone.
+            </p>
+
+            <p class="letter-p">
+              Thank you for being my best friend, my love, and my Kona Buri. Here is to a lifetime of happiness,
+              success, laughter, and endless love together!
+            </p>
+
+            <div class="letter-closing">
+              <span style="font-size: 1rem; color: var(--text-muted);">With all my love &amp; soul,</span>
+              <span class="letter-sign">Always Yours, Gulluu 💖</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: HUG CANNON & CELEBRATION -->
+    <section class="section hug-section">
+      <div class="container">
+        <div class="hug-card">
+          <i class="fa-solid fa-heart-circle-check" style="font-size: 3rem; color: var(--light-blue-glow);"></i>
+          <h2 style="font-family: var(--font-heading); font-size: 2.25rem; color: #fff;">Need A Quick Hug Right Now?
+          </h2>
+          <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 500px;">Click the button below to send a
+            magic flurry of hearts and warm energy across the screen!</p>
+
+          <button id="hug-btn" class="hug-btn" onclick="triggerFireworks()">
+            <i class="fa-solid fa-wand-magic"></i>
+            Send Virtual Hug &amp; Wishes
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <p>Crafted with endless love by Nahid for his most adorable Kona Buri <span class="footer-heart">💖</span> Happy
+          Friendship Day!</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: rgba(255,255,255,0.3);">Nahid &amp; Kona Buri • Best
+          Friends &amp; Deeply In Love • Forever &amp; Always</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================================================
+       MODALS
+       ========================================================================== -->
+
+  <!-- 1. Lightbox Photo Story Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button class="modal-close-btn" onclick="closeLightbox()">&times;</button>
+      <div class="lightbox-img-side">
+        <img id="lightbox-img" src="" alt="Memory Preview">
+      </div>
+      <div class="lightbox-info-side">
+        <div class="lightbox-date">
+          <i class="fa-solid fa-sparkles"></i> Kona Buri Special Memory
+        </div>
+        <h3 id="lightbox-title" class="lightbox-title">Memory Title</h3>
+        <p id="lightbox-story" class="lightbox-story">Memory detail story...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Mood Comfort Note Modal -->
+  <div id="mood-modal" class="lightbox-modal">
+    <div class="mood-modal-body">
+      <button class="modal-close-btn" onclick="closeMoodModal()">&times;</button>
+      <div class="mood-modal-header">
+        <i id="mood-modal-icon" class="fa-solid fa-heart mood-modal-icon"></i>
+        <h3 id="mood-modal-title" class="mood-modal-title">Mood Note</h3>
+      </div>
+      <div id="mood-modal-message" class="mood-modal-message">
+        Comfort message content...
+      </div>
+      <div class="mood-modal-footer">
+        Always here for you — Love<br> Nahid 💖
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JS Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
